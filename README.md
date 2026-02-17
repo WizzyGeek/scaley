@@ -6,8 +6,8 @@ supply and demand
 
 ## Components
 
-Scaley uses an Optimiser to allocate cloud resources
-with AI load forecasting used to figure out the future optimal allocations
+Scaley uses an Optimiser to allocate cloud resources based on data such as latency and cost
+~and AI load forecasting can be used to figure out the future optimal allocations~
 
 ## Acknowledgment
 
