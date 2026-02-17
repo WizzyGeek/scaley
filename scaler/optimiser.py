@@ -126,23 +126,25 @@ def solve_cloud_resource_allocation(D, V, L, C, k, alpha=1.0, beta=1.0, gamma=No
         print("No solution found")
         return None, None, None, None
 
-# Test the implementation with sample data
-print("Testing the cloud resource allocation optimizer with sample data:")
-print("=" * 60)
 
-# Sample data for 3 regions
-N = 3
-D_sample = [100, 150, 80]  # Demand in requests/sec
-V_sample = [10, 20, 8]     # Variance
-C_sample = [1.0, 1.2, 0.8] # Cost per unit resource
-k_sample = 50              # Capacity per unit resource
-L_sample = [               # Latency matrix (region i to users in region j)
-    [10, 50, 80],          # From region 0
-    [50, 10, 30],          # From region 1
-    [80, 30, 10]           # From region 2
-]
+if __name__ == "__main__":
+    # Test the implementation with sample data
+    print("Testing the cloud resource allocation optimizer with sample data:")
+    print("=" * 60)
 
-model, A_opt, x_opt, obj_value = solve_cloud_resource_allocation(
-    D_sample, V_sample, L_sample, C_sample, k_sample,
-    alpha=1.0, beta=0.1, gamma=0.115
-)
+    # Sample data for 3 regions
+    N = 3
+    D_sample = [100, 150, 80]  # Demand in requests/sec
+    V_sample = [10, 20, 8]     # Variance
+    C_sample = [1.0, 1.2, 0.8] # Cost per unit resource
+    k_sample = 50              # Capacity per unit resource
+    L_sample = [               # Latency matrix (region i to users in region j)
+        [10, 50, 80],          # From region 0
+        [50, 10, 30],          # From region 1
+        [80, 30, 10]           # From region 2
+    ]
+    
+    model, A_opt, x_opt, obj_value = solve_cloud_resource_allocation(
+        D_sample, V_sample, L_sample, C_sample, k_sample,
+        alpha=1.0, beta=0.1, gamma=0.115
+    )
